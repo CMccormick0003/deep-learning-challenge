@@ -1,4 +1,4 @@
-# deep-learning-challenge
+# Neural network model
 
 ## Overview of the Analysis
 This exercise is to use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup, a nonprofit fpundtion.  
@@ -68,16 +68,15 @@ IS_SUCESSFUL
 NAME and EIN were removed. Since these are unique, they would not add value to the model.
 
 ## Compiling, Training, and Evaluating the Model
-How many neurons, layers, and activation functions did you select for your neural network model, and why?
+### How many neurons, layers, and activation functions did you select for your neural network model, and why?
 •	The model has 8 layers, including an input layer, 6 hidden layers, and an output layer. 
 •	The number of neurons in each layer are as follows: 80 for the input layer, 50 for the hidden layers, 30 for the last hidden layer, and 1 for the output layer.
-•	The activation function used for all hidden layers is ReLU, which is commonly used in deep learning networks for its ability to handle non-linear data and prevent the vanishing gradient problem. The activation function used for the output layer is sigmoid, which is commonly used for binary classification problems. These were selected based on recommendations by GridSearchCV and RandomSearchCV to try and reach an accuracy score of 75%.
+•	The activation function used for all hidden layers is ReLU.  ReLU is commonly used in deep learning networks because it can handle non-linear data and prevent the vanishing gradient problem. 
+•	The activation function used for the output layer is sigmoid and this commonly used for binary classification problems. These were selected based on recommendations by GridSearchCV and RandomSearchCV to try and reach an accuracy score of 75%.
 
-Were you able to achieve the target model performance?
-What steps did you take in your attempts to increase model performance?
-Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
-
-## Preprocess the Data
-## Compile, Train and Evaluate the Model
-## Optimize the Model 
-## Write a Report on the Neural Network Model
+### Were you able to achieve the target model performance?  
+No, my model achieved 73.12.
+### What steps did you take in your attempts to increase model performance?  
+Steps taken to increase model performance included: dropped ID columns, binned low-frequency values, standardized the data by using a deep neural network with multiple hidden layers, and trying different optimizers. Different hyperparameters were tested using GridSearchCV and RandomSearchCV to improve the accuracy score.
+### Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+•	I think to further increase performance, next steps could be to remove columns that may not be important features like "special considerations."
