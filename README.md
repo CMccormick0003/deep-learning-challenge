@@ -11,20 +11,20 @@ Pandas, scikit-learn, StandardScaler, TensorFlow, Keras
 ## Source:  
 The source CSV contained more than 34,000 organizations that have received funding from Alphabet Soup over the years. The dataset included metadata about each organization, such as:
 
-EIN and NAME—Identification columns
-APPLICATION_TYPE—Alphabet Soup application type
-AFFILIATION—Affiliated sector of industry
-CLASSIFICATION—Government organization classification
-USE_CASE—Use case for funding
-ORGANIZATION—Organization type
-STATUS—Active status
-INCOME_AMT—Income classification
-SPECIAL_CONSIDERATIONS—Special considerations for application
-ASK_AMT—Funding amount requested
-IS_SUCCESSFUL—Was the money used effectively
+- EIN and NAME—Identification columns
+- APPLICATION_TYPE—Alphabet Soup application type
+- AFFILIATION—Affiliated sector of industry
+- CLASSIFICATION—Government organization classification
+- USE_CASE—Use case for funding
+- ORGANIZATION—Organization type
+- STATUS—Active status
+- INCOME_AMT—Income classification
+- SPECIAL_CONSIDERATIONS—Special considerations for application
+- ASK_AMT—Funding amount requested
+- IS_SUCCESSFUL—Was the money used effectively
 
 ### Preprocessing
-- Dropped non-beneficial ID columns
+- Dropped non-beneficial ID columns (EIN and NAME)
 - COnverted categorical data into numerical values with pd.get_dummies. 
 - The initial model contained an input layer with 43 units, two hidden layers with 80 and 30 units, and an output layer with 1 unit.
 
@@ -65,10 +65,13 @@ IS_SUCESSFUL
 •	ASK_AMT
 
 ### What variable(s) should be removed from the input data because they are neither targets nor features?
-NAME and EIN were removed.Since these are unique, they woudl not add value to the model.
+NAME and EIN were removed. Since these are unique, they would not add value to the model.
 
 ## Compiling, Training, and Evaluating the Model
 How many neurons, layers, and activation functions did you select for your neural network model, and why?
+•	The model has 8 layers, including an input layer, 6 hidden layers, and an output layer. 
+•	The number of neurons in each layer are as follows: 80 for the input layer, 50 for the hidden layers, 30 for the last hidden layer, and 1 for the output layer.
+•	The activation function used for all hidden layers is ReLU, which is commonly used in deep learning networks for its ability to handle non-linear data and prevent the vanishing gradient problem. The activation function used for the output layer is sigmoid, which is commonly used for binary classification problems. These were selected based on recommendations by GridSearchCV and RandomSearchCV to try and reach an accuracy score of 75%.
 
 Were you able to achieve the target model performance?
 What steps did you take in your attempts to increase model performance?
