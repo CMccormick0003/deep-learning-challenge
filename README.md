@@ -4,6 +4,9 @@
 This exercise is to use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup, a nonprofit fpundtion.  
 Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures.   
 ### Project Scope:  Design a neural network model, and be sure to adjust for modifications that will optimize the model to achieve higher than 75% accuracy.
+### Model Accuracy 75.45% achieved
+![image](https://github.com/CMccormick0003/deep-learning-challenge/assets/120672518/c198e601-2118-48c6-a663-68c3aae605af)
+
 
 ## Tools
 Pandas, scikit-learn, StandardScaler, TensorFlow, Keras
@@ -45,8 +48,15 @@ The source CSV contained more than 34,000 organizations that have received fundi
 - The number of bins was incrementally reduced from  from over 500 to 555 to 52, to 51.  
 - Accuracy shifted slighted with these modificatiosn from 0.72 to 0.73 to .0.7312.
 
+### Continued Optimization: 
+- Dropped the column Special_Considerations.
+- Increased the number of bins for the classification data to include all categories over 10 rather than 100. 
+- Limited income amount to 0.  Zero was the most prevalent value in this column.
+- Limited the ask amount to 5000.  This value was the most prevalent in this column.
+- Accuracy shifted 75.45%.
+
 ### Evaluation: 
-- The model's loss after training is 0.5630, and the accuracy is 0.7312. 
+- The model's loss after training is 0.5224, and the accuracy is 0.7545. 
 
 ## Results
 ## Data Preprocessing
@@ -75,8 +85,8 @@ NAME and EIN were removed. Since these are unique, they would not add value to t
 •	The activation function used for the output layer is sigmoid and this commonly used for binary classification problems. These were selected based on recommendations by GridSearchCV and RandomSearchCV to try and reach an accuracy score of 75%.
 
 ### Were you able to achieve the target model performance?  
-No, my model achieved 73.12.
+Yes, my model achieved 75.45.
 ### What steps did you take in your attempts to increase model performance?  
-Steps taken to increase model performance included: dropped ID columns, binned low-frequency values, standardized the data by using a deep neural network with multiple hidden layers, and trying different optimizers. Different hyperparameters were tested using GridSearchCV and RandomSearchCV to improve the accuracy score.
+Steps taken to increase model performance included: dropped ID columns, binned low-frequency values, standardized the data by using a deep neural network with multiple hidden layers, trying different optimizers, dropped column that was considered not integral to model and removed very low frequeny values. Different hyperparameters were tested using GridSearchCV and RandomSearchCV to improve the accuracy score.
 ### Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
-•	I think to further increase performance, next steps could be to remove columns that may not be important features like "special considerations."
+•	I think to further increase performance, next steps could be to investigate columns such as affiliation.
